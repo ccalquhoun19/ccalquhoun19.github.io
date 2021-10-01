@@ -1,0 +1,26 @@
+.header {
+    background-color: aquamarine;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10px 0;
+ }
+ 
+ nav li {
+    display: inline;
+ }
+ 
+ nav li a {
+    text-decoration: none;  
+    padding: 10px 20px;
+ }
+
+ nav li a:hover {
+    background-color: firebrick;
+ }
+
+ img {
+     width: 250px;
+     height: 250px;
+ }
