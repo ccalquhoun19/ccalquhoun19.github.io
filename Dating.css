@@ -8,6 +8,14 @@ nav {
     padding: 20px;
 }
  
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+}
+
 nav a {
     text-decoration: none;
     padding: 10px 20px;
@@ -16,10 +24,32 @@ nav a {
  }
 
  nav a:hover {
+    color: white;
     background-color: firebrick;
  }
+
+article {
+    background-color: dimgrey;
+}
 
  img {
      width: 250px;
      height: 250px;
+ }
+
+ .images {
+     display: flex;
+     background-color: goldenrod;
+ }
+
+ .img1 {
+     flex: 50%;
+     text-align: center;
+     padding: 10px;
+ }
+
+ .img2 {
+     flex: 50%;
+     text-align: center;
+     padding: 10px;
  }
