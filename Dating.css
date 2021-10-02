@@ -1,22 +1,21 @@
-.header {
+h1 {
     background-color: aquamarine;
+    padding: 20px;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 10px 0;
- }
+nav {
+    background-color: blueviolet;
+    padding: 20px;
+}
  
- nav li {
-    display: inline;
- }
- 
- nav li a {
-    text-decoration: none;  
+nav a {
+    text-decoration: none;
     padding: 10px 20px;
+    color: black;
+    font-size: larger;
  }
 
- nav li a:hover {
+ nav a:hover {
     background-color: firebrick;
  }
 
