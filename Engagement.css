@@ -32,6 +32,25 @@ article {
     padding: 20px;
 }
 
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+th {
+    text-align: center;
+    background-color: rgb(226, 226, 226);
+}
+
+tr, td {
+    border: 1px solid black;
+    height: 30px;
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+}
+
 .imgheading {
     display: flex;
 }
