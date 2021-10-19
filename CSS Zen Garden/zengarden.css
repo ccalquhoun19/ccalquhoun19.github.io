@@ -1,9 +1,27 @@
 #css-zen-garden {
-    color: white;
+    color: whitesmoke;
     background-image: url(https://i.stack.imgur.com/jGlzr.png);
 }
 
+h1 {
+    border: 13px solid;
+    border-image: url(https://static.vecteezy.com/system/resources/previews/001/084/274/original/abstract-brown-wood-texture-vector.jpg) 90 round;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 2px 2px 8px chocolate;
+}
+
+h2, #zen-summary {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
 h3 {
+    text-shadow: 2px 2px 8px chocolate;
     padding: 10px;
     text-align: center;
     border: 2px solid black;
@@ -11,7 +29,11 @@ h3 {
     background-image: url(https://static.vecteezy.com/system/resources/previews/001/084/274/original/abstract-brown-wood-texture-vector.jpg);
 }
 
-a:hover {
+a {
+    color: whitesmoke;
+}
+
+a:hover, a:hover:visited {
     color: rgb(220, 20, 20);
 }
 
