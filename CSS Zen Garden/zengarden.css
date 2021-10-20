@@ -1,32 +1,42 @@
 #css-zen-garden {
+    text-align: center;
     color: whitesmoke;
     background-image: url(https://i.stack.imgur.com/jGlzr.png);
 }
 
 h1 {
+    background-color: rgba(139, 32, 0, 0.534);
     border: 13px solid;
     border-image: url(https://static.vecteezy.com/system/resources/previews/001/084/274/original/abstract-brown-wood-texture-vector.jpg) 90 round;
     font-size: 40px;
     font-style: italic;
-    text-align: center;
     text-shadow: 2px 2px 8px chocolate;
 }
 
-h2, #zen-summary {
-    text-align: center;
-}
-
-p {
-    font-size: 18px;
+h2 {
+    font-size: x-large;
 }
 
 h3 {
     text-shadow: 2px 2px 8px chocolate;
     padding: 10px;
-    text-align: center;
     border: 2px solid black;
     border-radius: 4px;
     background-image: url(https://static.vecteezy.com/system/resources/previews/001/084/274/original/abstract-brown-wood-texture-vector.jpg);
+}
+
+p {
+    font-size: 18px;
+    padding: 8px;
+}
+
+li {
+    text-align: left;
+}
+
+abbr {
+    font-family: monospace;
+    font-weight: bold;
 }
 
 a {
@@ -44,4 +54,8 @@ a:visited {
 .design-selection, .design-archives, .zen-resources {
     width: 33.33%;
     float: left;
+}
+
+.summar:hover, .preamble:hover, .explanation:hover, .participation:hover, .benefits:hover, .requirements:hover {
+    background-color: rgba(139, 32, 0, 0.534);
 }
