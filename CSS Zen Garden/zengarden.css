@@ -1,15 +1,19 @@
 #css-zen-garden {
+    margin: 0px;
     text-align: center;
     color: whitesmoke;
     background-image: url(https://i.stack.imgur.com/jGlzr.png);
 }
 
-h1 {
+header, .summary {
     background-color: rgba(78, 18, 0, 0.534);
     border: 13px solid;
     border-image: url(https://static.vecteezy.com/system/resources/previews/001/084/274/original/abstract-brown-wood-texture-vector.jpg) 90;
     font-size: 40px;
     font-style: italic;
+}
+
+h1, h2, h3 {
     text-shadow: 2px 2px 8px chocolate;
 }
 
@@ -19,16 +23,16 @@ h2 {
 
 h3 {
     margin-top: 0px;
-    text-shadow: 2px 2px 8px chocolate;
     padding: 10px;
     border: 2px solid black;
+    border-top: none;
     border-radius: 4px;
     background-image: url(https://static.vecteezy.com/system/resources/previews/001/084/274/original/abstract-brown-wood-texture-vector.jpg);
 }
 
 p {
     font-size: 18px;
-    padding: 8px;
+    padding: 0px 5px 0px 5px;
 }
 
 li {
@@ -38,14 +42,27 @@ li {
 abbr {
     font-family: monospace;
     font-weight: bold;
+    text-shadow: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 li {
+    padding: 6px 0px 6px 0px;
+    width: fit-content;
+}
+
+li > a {
     list-style: none;
-    padding: 3px 0px 3px 0px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: larger;
+    font-size: 1.188em;
 }
 
 li:hover::marker {
@@ -57,7 +74,6 @@ li:hover::marker {
     float: left;
 }
 
-
 .preamble, .explanation, .participation, .benefits, .requirements {
     border: 2px solid transparent;
 }
@@ -65,7 +81,13 @@ li:hover::marker {
 .preamble:hover, .explanation:hover, .participation:hover, .benefits:hover, .requirements:hover {
     transition: 1s all ease-in;
     background-color: rgba(78, 18, 0, 0.534);
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
+}
+
+footer {
+    margin: 10px;
+}
+
+footer > a {
+    padding: 5px;
 }
