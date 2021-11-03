@@ -1,0 +1,39 @@
+#cell1, #cell2, #cell3, #cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
+    /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
+    width: 100px;
+    height: 100px;
+    display: flex;
+    border: solid black 2px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    }
+
+#board {
+    /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(3, auto)
+}
+
+#cell1, #cell2, #cell3 {
+    border-top: none;
+}
+
+#cell3, #cell6, #cell9 {
+    border-right: none;
+}
+
+#cell7, #cell8, #cell9 {
+    border-bottom: none;
+}
+
+#cell1, #cell4, #cell7 {
+    border-left: none;
+}
