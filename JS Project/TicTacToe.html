@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <script src="script.js" defer></script>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Tic Tac Toe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="TicTacToe.js" defer></script>
+    <link href="TicTacToe.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <input type = "button" value = "Start Game" onClick = "fun()"/>
+    <input type="button" value="Start Game" onClick="StartGame()"/>
     <input type="button" value="Reset Game" onClick="reset()"/>
-    <canvas id="myCanvas" width="0" height="0"></canvas>
-    
-    <canvas id="square1" height="100" width="100"></canvas>
-    <canvas id="square2" height="100" width="100"></canvas>
-    <canvas id="square3" height="100" width="100"></canvas>
-    <canvas id="square4" height="100" width="100"></canvas>
-    <canvas id="square5" height="100" width="100"></canvas>
-    <canvas id="square6" height="100" width="100"></canvas>
-    <canvas id="square7" height="100" width="100"></canvas>
-    <canvas id="square8" height="100" width="100"></canvas>
-    <canvas id="square9" height="100" width="100"></canvas>
+
+    <div id="cell1"></div>
+    <div id="cell2"></div>
+    <div id="cell3"></div>
+    <div id="cell4"></div>
+    <div id="cell5"></div>
+    <div id="cell6"></div>
+    <div id="cell7"></div>
+    <div id="cell8"></div>
+    <div id="cell9"></div>
   </body>
 </html>
