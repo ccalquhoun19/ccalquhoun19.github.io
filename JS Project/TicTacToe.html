@@ -4,23 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Tic Tac Toe</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="TicTacToe.js" defer></script>
     <link href="TicTacToe.css" rel="stylesheet" type="text/css" />
+    <script src="TicTacToe.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <input id="start-game" type="button" value="Start Game" onClick="StartGame()"/>
     <input id="reset-game" type="button" value="Reset Game" onClick="reset()"/>
+    <input id="changePlayer" type="button" value="Player" onClick="Change()"/>
+
     <div id="board">
-        <div id="cell1" ></div>
-        <div id="cell2" ></div>
-        <div id="cell3" ></div>
-        <div id="cell4" ></div>
-        <div id="cell5" ></div>
-        <div id="cell6" ></div>
-        <div id="cell7" ></div>
-        <div id="cell8" ></div>
-        <div id="cell9" ></div>
+        <div id="cell1"></div>
+        <div id="cell2"></div>
+        <div id="cell3"></div>
+        <div id="cell4"></div>
+        <div id="cell5"></div>
+        <div id="cell6"></div>
+        <div id="cell7"></div>
+        <div id="cell8"></div>
+        <div id="cell9"></div>
     </div>
+
+    <div id="PlayerO"></div>
+    <div id="PlayerX"></div>
   </body>
 </html>

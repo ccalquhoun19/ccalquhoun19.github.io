@@ -1,9 +1,9 @@
 #cell1, #cell2, #cell3, #cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
-    /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
     width: 100px;
     height: 100px;
-    display: flex;
     border: solid black 2px;
+    /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
+    display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -11,15 +11,15 @@
     }
 
 #board {
+    width: fit-content;
+    visibility: hidden;
     /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
-	width: 100vw;
-	height: 100vh;
 	display: grid;
 	justify-content: center;
 	align-content: center;
 	justify-items: center;
 	align-items: center;
-	grid-template-columns: repeat(3, auto)
+	grid-template-columns: repeat(3, auto);
 }
 
 #cell1, #cell2, #cell3 {
