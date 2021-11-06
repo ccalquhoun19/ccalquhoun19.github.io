@@ -9,20 +9,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <input id="start-game" type="button" value="Start Game" onClick="StartGame()"/>
-    <input id="reset-game" type="button" value="Reset Game" onClick="reset()"/>
+    <input id="start-game" type="button" value="Start New Game" onClick="StartGame()"/>
+    <input id="reset-game" type="button" value="Reset" onClick="reset()"/>
     <input id="changePlayer" type="button" value="Player" onClick="Change()"/>
 
     <div id="board">
-        <div id="cell1"></div>
-        <div id="cell2"></div>
-        <div id="cell3"></div>
-        <div id="cell4"></div>
-        <div id="cell5"></div>
-        <div id="cell6"></div>
-        <div id="cell7"></div>
-        <div id="cell8"></div>
-        <div id="cell9"></div>
+        <div id="cell1" onclick="addElement1()"></div>
+        <div id="cell2" onclick="addElement2()"></div>
+        <div id="cell3" onclick="addElement3()"></div>
+        <div id="cell4" onclick="addElement4()"></div>
+        <div id="cell5" onclick="addElement5()"></div>
+        <div id="cell6" onclick="addElement6()"></div>
+        <div id="cell7" onclick="addElement7()"></div>
+        <div id="cell8" onclick="addElement8()"></div>
+        <div id="cell9" onclick="addElement9()"></div>
     </div>
 
     <div id="PlayerO"></div>
