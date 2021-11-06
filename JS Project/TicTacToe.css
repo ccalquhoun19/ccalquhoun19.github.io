@@ -23,11 +23,6 @@
 	grid-template-columns: repeat(3, auto);
 }
 
-/* #cell1:after {
-    content: "\274c";
-    line-height: 50px;
-} */
-
 #cell1, #cell2, #cell3 {
     border-top: none;
 }
@@ -43,3 +38,4 @@
 #cell1, #cell4, #cell7 {
     border-left: none;
 }
+

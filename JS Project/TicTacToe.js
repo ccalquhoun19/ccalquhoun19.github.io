@@ -2,15 +2,15 @@
 // Note: O moves are odd, X moves are even
 
 // booleans to determine if cell has been clicked on
-let $cell1Full = false;
-let $cell2Full = false;
-let $cell3Full = false;
-let $cell4Full = false;
-let $cell5Full = false;
-let $cell6Full = false;
-let $cell7Full = false;
-let $cell8Full = false;
-let $cell9Full = false;
+let cell1Full = false;
+let cell2Full = false;
+let cell3Full = false;
+let cell4Full = false;
+let cell5Full = false;
+let cell6Full = false;
+let cell7Full = false;
+let cell8Full = false;
+let cell9Full = false;
 
 // boolean to determine whose turn is next
 let nextIsX = true;
@@ -36,15 +36,15 @@ function StartGame() {
 
 // 1
 function addElement1() {
-        // first checks if the cell is full
-        if (!$cell1Full) {
-        
-        }
-        
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
+    // first checks if the cell is full
+    if (!cell1Full) {
         $("#cell1").css("background-color", "red");
+        $cell1Full = true;
     }
+    // when cell is clicked on, add X or O (first should be O)
+    // if (nextIsX) {
+    //     $("#cell1").css("background-color", "red");
+    // }
     // check if the cell is already full
 }
 
