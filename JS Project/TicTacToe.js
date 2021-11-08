@@ -1,4 +1,5 @@
-// TODO: Draw X and O
+// Optimize: Move all changePlayer() and checkForWinner() outside of clickElement functions
+// Optimize: Move all .html's in clickElement functions to individual functions
 // Note: O moves are odd, X moves are even
 
 // booleans to determine if cell has been clicked on
@@ -13,12 +14,12 @@ let cell8Full = false;
 let cell9Full = false;
 
 // boolean to determine whose turn is next
-let nextIsX = true;
+let nextIsX = false;
 
 // counter to determine how many cells are left open
 let boardCount = 0;
 
-function StartGame() {
+function startGame() {
     // display board
     $("#board").css({visibility: "visible"});
 
@@ -26,131 +27,205 @@ function StartGame() {
     let playerO = prompt("Player O's Name: ");
     let playerX = prompt("Player X's Name: ");
 
-    // display names on right side of board
+    // display names on left side of board
     $("#PlayerO").html("Player O: " + playerO);
     $("#PlayerX").html("Player X: " + playerX);
 
     // show whose turn it is -- O starts first
     $("#PlayerO").css("background-color", "blue");
+    $("#PlayerX").css("background-color", "transparent");
 }
 
 // 1
-function addElement1() {
-    // first checks if the cell is full
+function clickElement1() {
     if (!cell1Full) {
-        $("#cell1").css("background-color", "red");
-        $cell1Full = true;
+        if (nextIsX) {
+            $("#cell1").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell1").html("O").css("font-size", "150px");
+        }
+        cell1Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // when cell is clicked on, add X or O (first should be O)
-    // if (nextIsX) {
-    //     $("#cell1").css("background-color", "red");
-    // }
-    // check if the cell is already full
 }
 
 // 2
-function addElement2() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell2").css("background-color", "blue");
+function clickElement2() {
+    if (!cell2Full) {
+        if (nextIsX) {
+            $("#cell2").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell2").html("O").css("font-size", "150px");
+        }
+        cell2Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 3
-function addElement3() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell3").css("background-color", "yellow");
+function clickElement3() {
+    if (!cell3Full) {
+        if (nextIsX) {
+            $("#cell3").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell3").html("O").css("font-size", "150px");
+        }
+        cell3Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 4
-function addElement4() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell4").css("background-color", "orange");
+function clickElement4() {
+    if (!cell4Full) {
+        if (nextIsX) {
+            $("#cell4").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell4").html("O").css("font-size", "150px");
+        }
+        cell4Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 5
-function addElement5() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell5").css("background-color", "purple");
+function clickElement5() {
+    if (!cell5Full) {
+        if (nextIsX) {
+            $("#cell5").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell5").html("O").css("font-size", "150px");
+        }
+        cell5Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 6
-function addElement6() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell6").css("background-color", "grey");
+function clickElement6() {
+    if (!cell6Full) {
+        if (nextIsX) {
+            $("#cell6").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell6").html("O").css("font-size", "150px");
+        }
+        cell6Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 7
-function addElement7() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell7").css("background-color", "black");
+function clickElement7() {
+    if (!cell7Full) {
+        if (nextIsX) {
+            $("#cell7").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell7").html("O").css("font-size", "150px");
+        }
+        cell7Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 8
-function addElement8() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell8").css("background-color", "pink");
+function clickElement8() {
+    if (!cell8Full) {
+        if (nextIsX) {
+            $("#cell8").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell8").html("O").css("font-size", "150px");
+        }
+        cell8Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
 // 9
-function addElement9() {
-    // when cell is clicked on, add X or O (first should be O)
-    if (nextIsX) {
-        $("#cell9").css("background-color", "green");
+function clickElement9() {
+    if (!cell9Full) {
+        if (nextIsX) {
+            $("#cell9").html("X").css("font-size", "150px");
+        }
+        else {
+            $("#cell9").html("O").css("font-size", "150px");
+        }
+        cell9Full = true;
+        checkForWinner();
+        changePlayer();
     }
-    // check if the cell is already full
 }
 
+// clears the board and keeps the same player names
 function reset() {
     // clear the board
-
-    // start new game
+    $("#cell1").html("");
+    $("#cell2").html("");
+    $("#cell3").html("");
+    $("#cell4").html("");
+    $("#cell5").html("");
+    $("#cell6").html("");
+    $("#cell7").html("");
+    $("#cell8").html("");
+    $("#cell9").html("");
 
     // reset values to initial values
-    
+    cell1Full = false;
+    cell2Full = false;
+    cell3Full = false;
+    cell4Full = false;
+    cell5Full = false;
+    cell6Full = false;
+    cell7Full = false;
+    cell8Full = false;
+    cell9Full = false;
+    nextIsX = false;
+    boardCount = 0;
+
+    // reset first player to O
+    $("#PlayerO").css("background-color", "blue");
+    $("#PlayerX").css("background-color", "transparent");
 }
 
-function winner() {
+function checkForWinner() {
+    boardCount+= 1;
     // no winner until at least 5 moves have occurred
+    if (boardCount >= 5) {
+        // check if there is a winner
+ 
+        // if number of moves is 9, display winner or tie
 
-    // check if there is a winner
+        // change CSS to display results of game
 
-    // if number of moves is 9, display winner or tie
+        // display "play again" button to prompt users
 
-    // change CSS to display results of game
-
-    // display "play again" button to prompt users
-
+    }
 }
 
-function Change() {
-    if (nextIsX) {
+function changePlayer() {
+    if (!nextIsX) {
         $("#PlayerO").css("background-color", "transparent");
         $("#PlayerX").css("background-color", "blue");
-        nextIsX = false;
+        nextIsX = true;
     }
     else {
         $("#PlayerO").css("background-color", "blue");
         $("#PlayerX").css("background-color", "transparent");
-        nextIsX = true;
+        nextIsX = false;
     }
 }
