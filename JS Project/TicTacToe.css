@@ -1,3 +1,30 @@
+body {
+    font-family: sans-serif;
+}
+
+#start-game, #reset-game {
+    font-size: larger;
+    border-radius: 10px;
+    border: solid black 2px;
+    /* Following code from: https://saruwakakun.com/en/css3-buttons*/
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    padding: 0.5em 1em;
+    color: #ffffff;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.29);
+}
+
+#start-game:hover, #reset-game:hover {
+    cursor: pointer;
+}
+
+#start-game:active, #reset-game:active{
+    -ms-transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
 #cell1, #cell2, #cell3, #cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
     width: 150px;
     height: 150px;
