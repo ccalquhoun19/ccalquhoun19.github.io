@@ -20,6 +20,10 @@ let nextIsX = false;
 let boardCount = 0;
 
 function startGame() {
+    if (boardCount > 0) {
+        reset();
+    }
+    
     // display board
     $("#board").css({visibility: "visible"});
 
@@ -27,7 +31,7 @@ function startGame() {
     let playerO = prompt("Player O's Name: ");
     let playerX = prompt("Player X's Name: ");
 
-    // display names on left side of board
+    // display names below board
     $("#PlayerO").html("Player O: " + playerO);
     $("#PlayerX").html("Player X: " + playerX);
 
@@ -203,13 +207,22 @@ function reset() {
 }
 
 function checkForWinner() {
+    const minWin = 5;
+    const maxWin = 9;
+
     boardCount+= 1;
     // no winner until at least 5 moves have occurred
-    if (boardCount >= 5) {
+    if (boardCount == maxWin) {
         // check if there is a winner
  
-        // if number of moves is 9, display winner or tie
+        // change CSS to display results of game
+        $("body").css("background-color", "orange");
+        // display "play again" button to prompt users
 
+    }
+    else {
+        // check if there is a winner
+ 
         // change CSS to display results of game
 
         // display "play again" button to prompt users
