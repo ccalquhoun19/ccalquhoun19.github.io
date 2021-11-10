@@ -1,6 +1,5 @@
 // Optimize: Move all changePlayer() and checkForWinner() outside of clickElement functions
 // Optimize: Move all .html's in clickElement functions to individual functions
-// Note: O moves are odd, X moves are even
 
 // booleans to determine if cell has been clicked on
 let cell1Full = false;
@@ -12,6 +11,10 @@ let cell6Full = false;
 let cell7Full = false;
 let cell8Full = false;
 let cell9Full = false;
+
+// player names
+let playerO = null;
+let playerX = null;
 
 // boolean to determine whose turn is next
 let nextIsX = false;
@@ -28,8 +31,10 @@ function startGame() {
     $("#board").css({visibility: "visible"});
 
     // take player X and O names
-    let playerO = prompt("Player O's Name: ");
-    let playerX = prompt("Player X's Name: ");
+    while (playerO == null || playerX == null) {
+        playerO = prompt("Player O's Name: ");
+        playerX = prompt("Player X's Name: ");
+    }
 
     // display names below board
     $("#PlayerO").html("Player O: " + playerO);
@@ -213,73 +218,69 @@ function checkForWinner() {
     if (boardCount >= minWin) {
         // check if top row is X's
         if ($("#cell1").html() == "X" && $("#cell2").html() == "X" && $("#cell3").html() == "X") {
-            $("body").css("background-color", "blue");
+            winner(playerX);
         }
         // check if middle row is X's
         else if ($("#cell4").html() == "X" && $("#cell5").html() == "X" && $("#cell6").html() == "X") {
-            $("body").css("background-color", "red");
+            winner(playerX);
         }
         // check if bottom row is X's
         else if ($("#cell7").html() == "X" && $("#cell8").html() == "X" && $("#cell9").html() == "X") {
-            $("body").css("background-color", "green");
+            winner(playerX);
         }
         // check if left column is X's
         else if ($("#cell1").html() == "X" && $("#cell4").html() == "X" && $("#cell7").html() == "X") {
-            $("body").css("background-color", "pink");
+            winner(playerX);
         }
         // check if middle column is X's
         else if ($("#cell2").html() == "X" && $("#cell5").html() == "X" && $("#cell8").html() == "X") {
-            $("body").css("background-color", "orange");
+            winner(playerX);
         }
         // check if right column is X's
         else if ($("#cell3").html() == "X" && $("#cell6").html() == "X" && $("#cell9").html() == "X") {
-            $("body").css("background-color", "grey");
+            winner(playerX);
         }
         // check if left to right diagonal is X's
         else if ($("#cell1").html() == "X" && $("#cell5").html() == "X" && $("#cell9").html() == "X") {
-            $("body").css("background-color", "purple");
+            winner(playerX);
         }
         // check if right to left diagonal is X's
         else if ($("#cell3").html() == "X" && $("#cell5").html() == "X" && $("#cell7").html() == "X") {
-            $("body").css("background-color", "yellow");
+            winner(playerX);
         }
 
         // check if top row is O's
         else if ($("#cell1").html() == "O" && $("#cell2").html() == "O" && $("#cell3").html() == "O") {
-            $("body").css("background-color", "blue");
+            winner(playerO);
         }
         // check if middle row is O's
         else if ($("#cell4").html() == "O" && $("#cell5").html() == "O" && $("#cell6").html() == "O") {
-            $("body").css("background-color", "red");
+            winner(playerO);
         }
         // check if bottom row is O's
         else if ($("#cell7").html() == "O" && $("#cell8").html() == "O" && $("#cell9").html() == "O") {
-            $("body").css("background-color", "green");
+            winner(playerO);
         }
         // check if left column is O's
         else if ($("#cell1").html() == "O" && $("#cell4").html() == "O" && $("#cell7").html() == "O") {
-            $("body").css("background-color", "pink");
+            winner(playerO);
         }
         // check if middle column is O's
         else if ($("#cell2").html() == "O" && $("#cell5").html() == "O" && $("#cell8").html() == "O") {
-            $("body").css("background-color", "orange");
+            winner(playerO);
         }
         // check if right column is O's
         else if ($("#cell3").html() == "O" && $("#cell6").html() == "O" && $("#cell9").html() == "O") {
-            $("body").css("background-color", "grey");
+            winner(playerO);
         }
         // check if left to right diagonal is O's
         else if ($("#cell1").html() == "O" && $("#cell5").html() == "O" && $("#cell9").html() == "O") {
-            $("body").css("background-color", "purple");
+            winner(playerO);
         }
         // check if right to left diagonal is O's
         else if ($("#cell3").html() == "O" && $("#cell5").html() == "O" && $("#cell7").html() == "O") {
-            $("body").css("background-color", "yellow");
+            winner(playerO);
         }
-        // change CSS to display results of game
-
-        // display "play again" button to prompt users
-
     }
     else {
         // check if there is a winner
@@ -289,6 +290,17 @@ function checkForWinner() {
         // display "play again" button to prompt users
 
     }
+}
+
+function winner(playerName) {
+    // change CSS to display results of game
+    $("body").css({
+        "background-color": "blue"
+    });
+    alert("The winner is " + playerName + "!");
+    // display "play again" button to prompt users
+
+
 }
 
 function changePlayer() {
