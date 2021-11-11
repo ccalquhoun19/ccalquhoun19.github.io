@@ -13,8 +13,8 @@ let cell8Full = false;
 let cell9Full = false;
 
 // player names
-let playerO = null;
-let playerX = null;
+let playerO;
+let playerX;
 
 // boolean to determine whose turn is next
 let nextIsX = false;
@@ -23,26 +23,27 @@ let nextIsX = false;
 let boardCount = 0;
 
 function startGame() {
-    if (boardCount > 0) {
-        reset();
-    }
+    reset();
     
-    // display board
-    $("#board").css({visibility: "visible"});
+    $("#board").css("visibility", "visible");
+    $("#players").css("visibility", "visible");
+    $("#buttonContainer").css("visibility", "hidden");
+    $("#winnerText").css("visibility", "hidden");
 
-    // take player X and O names
-    while (playerO == null || playerX == null) {
+    playerO = prompt("Player O's Name: ");
+    playerX = prompt("Player X's Name: ");
+
+    while (playerO == null || playerO.length == 0 || playerX == null || playerX.length == 0) {
         playerO = prompt("Player O's Name: ");
         playerX = prompt("Player X's Name: ");
     }
 
-    // display names below board
     $("#PlayerO").html("Player O: " + playerO);
     $("#PlayerX").html("Player X: " + playerX);
 
-    // show whose turn it is -- O starts first
     $("#PlayerO").css("background-color", "blue");
     $("#PlayerX").css("background-color", "transparent");
+
 }
 
 // 1
@@ -206,101 +207,116 @@ function reset() {
 
     $("#PlayerO").css("background-color", "blue");
     $("#PlayerX").css("background-color", "transparent");
-    $("body").css("background-color", "transparent");
 }
 
 function checkForWinner() {
-    const minWin = 5;
-    const maxWin = 9;
+    const MINWIN = 5;
+    const MAXWIN = 9;
+    let playerWon = 0;
 
-    boardCount+= 1;
+    boardCount += 1;
     // no winner until at least 5 moves have occurred
-    if (boardCount >= minWin) {
+    if (boardCount >= MINWIN) {
         // check if top row is X's
         if ($("#cell1").html() == "X" && $("#cell2").html() == "X" && $("#cell3").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if middle row is X's
         else if ($("#cell4").html() == "X" && $("#cell5").html() == "X" && $("#cell6").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if bottom row is X's
         else if ($("#cell7").html() == "X" && $("#cell8").html() == "X" && $("#cell9").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if left column is X's
         else if ($("#cell1").html() == "X" && $("#cell4").html() == "X" && $("#cell7").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if middle column is X's
         else if ($("#cell2").html() == "X" && $("#cell5").html() == "X" && $("#cell8").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if right column is X's
         else if ($("#cell3").html() == "X" && $("#cell6").html() == "X" && $("#cell9").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if left to right diagonal is X's
         else if ($("#cell1").html() == "X" && $("#cell5").html() == "X" && $("#cell9").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
         // check if right to left diagonal is X's
         else if ($("#cell3").html() == "X" && $("#cell5").html() == "X" && $("#cell7").html() == "X") {
-            winner(playerX);
+            playerWon += 1;
+            winner(playerX, playerWon);
         }
 
         // check if top row is O's
         else if ($("#cell1").html() == "O" && $("#cell2").html() == "O" && $("#cell3").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if middle row is O's
         else if ($("#cell4").html() == "O" && $("#cell5").html() == "O" && $("#cell6").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if bottom row is O's
         else if ($("#cell7").html() == "O" && $("#cell8").html() == "O" && $("#cell9").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if left column is O's
         else if ($("#cell1").html() == "O" && $("#cell4").html() == "O" && $("#cell7").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if middle column is O's
         else if ($("#cell2").html() == "O" && $("#cell5").html() == "O" && $("#cell8").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if right column is O's
         else if ($("#cell3").html() == "O" && $("#cell6").html() == "O" && $("#cell9").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if left to right diagonal is O's
         else if ($("#cell1").html() == "O" && $("#cell5").html() == "O" && $("#cell9").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
         // check if right to left diagonal is O's
         else if ($("#cell3").html() == "O" && $("#cell5").html() == "O" && $("#cell7").html() == "O") {
-            winner(playerO);
+            playerWon += 1;
+            winner(playerO, playerWon);
         }
     }
-    else {
-        // check if there is a winner
- 
-        // change CSS to display results of game
-
-        // display "play again" button to prompt users
-
+    if (boardCount == MAXWIN && playerWon == 0) {
+        winner("It's a tie...", playerWon)
     }
 }
 
-function winner(playerName) {
+function winner(playerName, playerWinner) {
     // change CSS to display results of game
-    $("body").css({
-        "background-color": "blue"
-    });
-    alert("The winner is " + playerName + "!");
-    // display "play again" button to prompt users
+    $("#board").css("visibility", "hidden");
+    $("#players").css("visibility", "hidden");
+    $("#buttonContainer").css("visibility", "visible");
+    $("#winnerText").css("visibility", "visible");
 
-
+    if (playerWinner == 1) {
+        $("#winnerText").html("The winner is " + playerName + "!");
+    }
+    else {
+        $("#winnerText").html(playerName);
+    }
 }
 
 function changePlayer() {
