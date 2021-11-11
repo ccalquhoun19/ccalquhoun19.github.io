@@ -1,7 +1,3 @@
-// Optimize: Move all changePlayer() and checkForWinner() outside of clickElement functions
-// Optimize: Move all .html's in clickElement functions to individual functions
-
-// booleans to determine if cell has been clicked on
 let cell1Full = false;
 let cell2Full = false;
 let cell3Full = false;
@@ -12,14 +8,11 @@ let cell7Full = false;
 let cell8Full = false;
 let cell9Full = false;
 
-// player names
 let playerO;
 let playerX;
 
-// boolean to determine whose turn is next
 let nextIsX = false;
 
-// counter to determine how many cells are left open
 let boardCount = 0;
 
 function startGame() {

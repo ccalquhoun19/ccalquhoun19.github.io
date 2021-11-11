@@ -4,13 +4,9 @@ body {
     text-align: center;
 }
 
-#end{
-    visibility: hidden;
-}
-
 #startGame{
     /* Following code from: https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/ */
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -27,7 +23,7 @@ body {
 #cell1, #cell2, #cell3, #cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
     width: 150px;
     height: 150px;
-    border: solid black 2px;
+    border: solid black 4px;
     /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
     display: flex;
     justify-content: center;
