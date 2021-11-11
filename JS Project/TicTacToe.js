@@ -43,10 +43,16 @@ function startGame() {
 function clickElement1() {
     if (!cell1Full) {
         if (nextIsX) {
-            $("#cell1").html("X").css("font-size", "150px");
+            $("#cell1").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell1").html("O").css("font-size", "150px");
+            $("#cell1").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell1Full = true;
         checkForWinner();
@@ -58,10 +64,16 @@ function clickElement1() {
 function clickElement2() {
     if (!cell2Full) {
         if (nextIsX) {
-            $("#cell2").html("X").css("font-size", "150px");
+            $("#cell2").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell2").html("O").css("font-size", "150px");
+            $("#cell2").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell2Full = true;
         checkForWinner();
@@ -73,10 +85,16 @@ function clickElement2() {
 function clickElement3() {
     if (!cell3Full) {
         if (nextIsX) {
-            $("#cell3").html("X").css("font-size", "150px");
+            $("#cell3").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell3").html("O").css("font-size", "150px");
+            $("#cell3").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell3Full = true;
         checkForWinner();
@@ -88,10 +106,16 @@ function clickElement3() {
 function clickElement4() {
     if (!cell4Full) {
         if (nextIsX) {
-            $("#cell4").html("X").css("font-size", "150px");
+            $("#cell4").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell4").html("O").css("font-size", "150px");
+            $("#cell4").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell4Full = true;
         checkForWinner();
@@ -103,10 +127,16 @@ function clickElement4() {
 function clickElement5() {
     if (!cell5Full) {
         if (nextIsX) {
-            $("#cell5").html("X").css("font-size", "150px");
+            $("#cell5").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell5").html("O").css("font-size", "150px");
+            $("#cell5").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell5Full = true;
         checkForWinner();
@@ -118,10 +148,16 @@ function clickElement5() {
 function clickElement6() {
     if (!cell6Full) {
         if (nextIsX) {
-            $("#cell6").html("X").css("font-size", "150px");
+            $("#cell6").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell6").html("O").css("font-size", "150px");
+            $("#cell6").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell6Full = true;
         checkForWinner();
@@ -133,10 +169,16 @@ function clickElement6() {
 function clickElement7() {
     if (!cell7Full) {
         if (nextIsX) {
-            $("#cell7").html("X").css("font-size", "150px");
+            $("#cell7").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell7").html("O").css("font-size", "150px");
+            $("#cell7").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell7Full = true;
         checkForWinner();
@@ -148,10 +190,16 @@ function clickElement7() {
 function clickElement8() {
     if (!cell8Full) {
         if (nextIsX) {
-            $("#cell8").html("X").css("font-size", "150px");
+            $("#cell8").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell8").html("O").css("font-size", "150px");
+            $("#cell8").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell8Full = true;
         checkForWinner();
@@ -163,10 +211,16 @@ function clickElement8() {
 function clickElement9() {
     if (!cell9Full) {
         if (nextIsX) {
-            $("#cell9").html("X").css("font-size", "150px");
+            $("#cell9").html("X").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         else {
-            $("#cell9").html("O").css("font-size", "150px");
+            $("#cell9").html("O").css({
+                "font-size": "150px",
+                color: "#56baed"
+            });
         }
         cell9Full = true;
         checkForWinner();
@@ -305,7 +359,7 @@ function winner(playerName, playerWinner) {
     $("#winnerText").css("visibility", "visible");
 
     if (playerWinner == 1) {
-        $("#winnerText").html("The winner is " + playerName + "!");
+        $("#winnerText").html("The Winner is " + playerName + "!");
     }
     else {
         $("#winnerText").html(playerName);
