@@ -63,7 +63,7 @@ body {
 
 #board {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 20px;
     width: fit-content;
     /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
 	display: grid;
