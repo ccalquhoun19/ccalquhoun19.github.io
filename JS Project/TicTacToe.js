@@ -15,13 +15,11 @@ let nextIsX = false;
 
 let boardCount = 0;
 
+$("#board").fadeOut(1);
+$("#players").fadeOut(1);
+
 function startGame() {
     reset();
-    
-    $("#board").css("visibility", "visible");
-    $("#players").css("visibility", "visible");
-    $("#buttonContainer").css("visibility", "hidden");
-    $("#winnerText").css("visibility", "hidden");
 
     playerO = prompt("Player O's Name: ");
     playerX = prompt("Player X's Name: ");
@@ -31,12 +29,15 @@ function startGame() {
         playerX = prompt("Player X's Name: ");
     }
 
+    $("#board").fadeIn("slow");
+    $("#players").fadeIn("slow");
+    $("#buttonContainer").fadeOut("slow");
+
     $("#PlayerO").html("Player O: " + playerO);
     $("#PlayerX").html("Player X: " + playerX);
 
     $("#PlayerO").css("background-color", "blue");
     $("#PlayerX").css("background-color", "transparent");
-
 }
 
 // 1
@@ -353,10 +354,9 @@ function checkForWinner() {
 
 function winner(playerName, playerWinner) {
     // change CSS to display results of game
-    $("#board").css("visibility", "hidden");
-    $("#players").css("visibility", "hidden");
-    $("#buttonContainer").css("visibility", "visible");
-    $("#winnerText").css("visibility", "visible");
+    $("#board").fadeOut("slow");
+    $("#players").fadeOut("slow");
+    $("#buttonContainer").fadeIn("slow");
 
     if (playerWinner == 1) {
         $("#winnerText").html("The Winner is " + playerName + "!");
