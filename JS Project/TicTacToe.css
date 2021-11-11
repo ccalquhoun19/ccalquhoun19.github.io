@@ -4,7 +4,25 @@ body {
     text-align: center;
 }
 
-#startGame{
+#players {
+    visibility: hidden;
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: white;
+    width: 30%;
+    height: 5%;
+    margin: 15px auto;
+}
+
+#PlayerO, #PlayerX {
+    color: #56baed;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px;
+    border-radius: 6px;
+}
+
+#buttonContainer {
     /* Following code from: https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/ */
     position: fixed;
     top: 50%;
@@ -17,13 +35,25 @@ body {
     border: solid black 3px;
     border-radius: 10px;
     color:#56baed;
+}
+
+#startGame {
+    border: solid black 3px;
+    border-radius: 10px;
+    /* Following code from: https://www.codingnepalweb.com/tic-tac-toe-game-javascript/ */
+    font-size: 40px;
+    padding: 10px;
+    background:#56baed;
+    color:#fff;
     cursor: pointer;
 }
 
 #cell1, #cell2, #cell3, #cell4, #cell5, #cell6, #cell7, #cell8, #cell9 {
     width: 150px;
     height: 150px;
-    border: solid black 4px;
+    border: solid #56baed 4px;
+    border-radius: 10px;
+    background-color: #fff;
     /* Following code from: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game*/
     display: flex;
     justify-content: center;
