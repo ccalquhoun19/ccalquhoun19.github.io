@@ -9,8 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <input id="start-game" type="button" value="Start New Game" onClick="startGame()"/>
-    <input id="reset-game" type="button" value="Reset" onClick="reset()"/>
+    <div id="buttonContainer">
+      <div id="winnerText"></div>
+      <input id="startGame" type="button" value="Start New Game" onClick="startGame()"/>
+    </div>
 
     <div id="board">
         <div id="cell1" onclick="clickElement1()"></div>
@@ -24,7 +26,9 @@
         <div id="cell9" onclick="clickElement9()"></div>
     </div>
 
-    <div id="PlayerO"></div>
-    <div id="PlayerX"></div>
+    <div id="players">
+      <div id="PlayerO"></div>
+      <div id="PlayerX"></div>
+    </div>
   </body>
 </html>
