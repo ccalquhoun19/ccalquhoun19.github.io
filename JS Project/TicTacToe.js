@@ -348,7 +348,7 @@ function checkForWinner() {
         }
     }
     if (boardCount == MAXWIN && playerWon == 0) {
-        winner("It's a tie...", playerWon)
+        winner("It's a tie...", playerWon);
     }
 }
 
