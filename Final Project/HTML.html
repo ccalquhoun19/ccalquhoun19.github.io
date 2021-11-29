@@ -5,9 +5,47 @@
     <meta name="viewport" content="width=device-width">
     <title>Final Project</title>
     <link href="CSS.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <script src="Javascript.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
+  
   <body>
-      <p>Testing</p>
+
+    <label for="userYear">Enter a Year: </label>
+    <input type="text" id="userYear"> </br>
+
+
+    <label for="TypeList">Enter a Country Name: </label>
+    <input name="TypeList" list="countries">
+    <datalist id="countries">
+      <option value="AD">Andorra</option>
+      <option value="AL">Albania</option>
+      <option value="AR">Argentina</option>
+      <option value="AT">Austria</option>
+      <option value="AU">Australia</option>
+      <option value="AX">Åland Islands</option>
+
+      <option value="BA">Bosnia and Herzegovina</option>
+      <option value="BB">Barbados</option>
+      <option value="BE">Belgium</option>
+      <option value="BG">Bulgaria</option>
+      <option value="BJ">Benin</option>
+      <option value="BO">Bolivia</option>
+      <option value="BR">Brazil</option>
+      <option value="BS">Bahamas</option>
+      <option value="BW">Botswana</option>
+      <option value="BY">Belarus</option>
+      <option value="BZ">Belize</option>
+
+      <option value="CA"></option>
+    </datalist>
+    <button id="userSubmit" onclick="sendRequest()">Holiday Search</button>
+
+    <div id="localName"></div>
+    <div id="commonName"></div>
+
+    <ul>
+
+    </ul>
   </body>
