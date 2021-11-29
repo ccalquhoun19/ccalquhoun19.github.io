@@ -11,6 +11,9 @@ async function sendRequest() {
     // fetch the url and check if it's valid
     const response = await fetch(userURL);
     if (response.ok) {
+        // initialize id incrementer
+        let i = 1;
+
         // initialize variables for adding elements to the table
         let dates = "";
         let localNames = "";
@@ -19,15 +22,26 @@ async function sendRequest() {
         // get response from API
         const holidays = await response.json();
 
+        // append headers for the table
+        $("#dates-row").text("Holiday Date");
+        $("#common-row").append("Common Holiday Name");
+        $("#local-row").append("Local Holiday Name");
+
         // for each date in the response
         for (let names of holidays) {
-            dates += `<td> ${names.date} </td>`;
-            localNames += `<td> ${names.localName} </td>`;
-            commonNames += `<td> ${names.name} </td>`;
+            // create each row with the date, common name, and local name
+            dates = `<tr id=${i}><td> ${names.date} </td></tr>`;
+            commonNames = `<td> ${names.name} </td>`;
+            localNames = `<td> ${names.localName} </td>`;
+
+            // populate the table
+            $("#holiday-output").append(dates);
+            $("#" + i).append(commonNames);
+            $("#" + i).append(localNames);
+
+            // increment id
+            i++;
         }
-        $("#dates-row").html(`<th>Dates</th>`+ dates);
-        $("#local-row").html(`<th>Local Names</th>` + localNames);
-        $("#common-row").html(`<th>Common Names</th>` + commonNames);
     }
     // display error message if country isn't valid
     else {
