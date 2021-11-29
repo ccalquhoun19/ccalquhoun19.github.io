@@ -1,6 +1,4 @@
 // TODO update first row with country name
-// TODO fix table so multiple searches can be done in same session
-// TODO reset table before each search
 // TODO validation for year
 // TODO validation for country name
 // TODO CSS for button
@@ -30,7 +28,7 @@ async function sendRequest() {
         let localNames = "";
         let commonNames = "";
 
-        // reset table output
+        // reset table data
         $("#holiday-output").html("<tbody><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
 
         // get response from API
