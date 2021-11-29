@@ -1,3 +1,14 @@
+// TODO update first row with country name
+// TODO fix table so multiple searches can be done in same session
+// TODO reset table before each search
+// TODO validation for year
+// TODO validation for country name
+// TODO CSS for button
+// TODO CSS for table layout
+// TODO make the page look pretty
+
+
+// sends Ajax request to get public holidays and updates table with information
 async function sendRequest() {
 
     // initialize variables for url
@@ -19,13 +30,16 @@ async function sendRequest() {
         let localNames = "";
         let commonNames = "";
 
+        // reset table output
+        $("#holiday-output").html("<tbody><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
+
         // get response from API
         const holidays = await response.json();
 
         // append headers for the table
         $("#dates-row").text("Holiday Date");
-        $("#common-row").append("Common Holiday Name");
-        $("#local-row").append("Local Holiday Name");
+        $("#common-row").text("Common Holiday Name");
+        $("#local-row").text("Local Holiday Name");
 
         // for each date in the response
         for (let names of holidays) {
@@ -45,7 +59,7 @@ async function sendRequest() {
     }
     // display error message if country isn't valid
     else {
-       alert("Can't find country. Try another country.");
+       alert("Some of your input is invalid.");
     }
 }
 
