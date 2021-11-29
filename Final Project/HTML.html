@@ -13,7 +13,7 @@
   <body>
 
     <label for="userYear">Enter a Year: </label>
-    <input type="text" id="userYear"> </br>
+    <input type="text" id="user-year"> </br>
 
 
     <label for="TypeList">Enter a Country Name: </label>
@@ -150,12 +150,18 @@
       <option value="ZA">South Africa</option>
       <option value="ZW">Zimbabwe</option>
     </datalist>
-    <button id="userSubmit" onclick="sendRequest()">Holiday Search</button>
+    <button id="user-submit" onclick="sendRequest()">Holiday Search</button>
 
-    <div id="localName"></div>
-    <div id="commonName"></div>
+    <div id="local-name"></div>
+    <div id="common-name"></div>
 
-    <ul>
+    <table id="output-table" class="table table-bordered">
+      <tr>
+        <th id="country-name"></th>
+      </tr>
+      <tr id="dates-row"></tr>
+      <tr id="common-row"></tr>
+      <tr id="local-row"></tr>
+    </table>
 
-    </ul>
   </body>
