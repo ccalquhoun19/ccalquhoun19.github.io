@@ -1,11 +1,51 @@
 body {
-    text-align: center;
+    background: url("https://cdn.pixabay.com/photo/2020/11/02/18/03/snow-5707452__340.jpg");
+    background-size: cover;
 }
 
 #button-container {
     padding: 10px;
+    text-align: center;
+}
+
+#user-form {
+    text-align: center;
+}
+
+#headers {
+    text-align: center;
+}
+
+#title {
+    margin-bottom: 5px;
 }
 
 #intro {
-    padding-bottom: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#country-label {
+    padding-left: 10px;
+}
+
+#holiday-table {
+    padding: 0px 30px 30px 30px;
+    visibility: hidden;
+}
+
+table {
+    background-color: white;
+}
+
+th {
+    text-align: center;
+}
+
+#country-name {
+    font-size: x-large;
+}
+
+#dates-row, #local-row, #common-row {
+    font-size: large;
 }
