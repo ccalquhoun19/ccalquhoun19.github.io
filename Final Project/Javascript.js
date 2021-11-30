@@ -1,7 +1,5 @@
-// TODO update first row with country name
 // TODO validation for year
 // TODO validation for country name
-// TODO CSS for button
 // TODO CSS for table layout
 // TODO make the page look pretty
 
@@ -28,8 +26,18 @@ async function sendRequest() {
         let localNames = "";
         let commonNames = "";
 
+        // show table
+        $("#holiday-table").css("visibility", "visible");
+
         // reset table data
-        $("#holiday-output").html("<tbody><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
+        $("#holiday-output").html("<tbody><tr id='country-name'></tr><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
+
+        // gets the country name
+        // code line from: https://cmsdk.com/jquery/getting-the-value-and-text-from-a-datalist-in-jquery.html
+        let countryName = document.querySelectorAll('option[value="' + userCountry + '"]')[0].innerHTML;
+
+        // add country name
+        $("#country-name").html(`<th colspan='3'> ${"Holidays in " + countryName} </th>`);
 
         // get response from API
         const holidays = await response.json();
@@ -61,3 +69,11 @@ async function sendRequest() {
     }
 }
 
+// if the user hits enter with either field full, search for the holidays
+document.addEventListener("keypress", function(e) {
+    if ($("#user-year").val() != "" || $("input[name=TypeList]").val() != "") {
+        if (e.key === "Enter") {
+            sendRequest();
+        }
+    }
+});
