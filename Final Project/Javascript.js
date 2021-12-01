@@ -1,18 +1,48 @@
-// TODO validation for year
-// TODO validation for country name
 // TODO CSS for table layout
 // TODO make the page look pretty
 
 
-// sends Ajax request to get public holidays and updates table with information
-async function sendRequest() {
+/*
+  Check if the year is valid
+*/
+$("#user-year").focusout(function() {
+  const maxYear = 10000;
+  const minYear = 0;
 
+  let year = $("#user-year").val();
+
+  if (year <= minYear || year >= maxYear) {
+    $("#year-div").attr("class", "form-group has-error");
+  }
+  else if (year > minYear || year < maxYear) {
+    $("#year-div").attr("class", "form-group");
+  }
+});
+
+/*
+  Check if the country code is valid
+*/
+$("#user-country").focusout(function() {
+  const codeLength = 2
+
+  let country = $("input[name=TypeList]").val();
+
+  if (country.length != codeLength) {
+    $("#country-div").attr("class", "form-group has-error");
+  }
+  else {
+    $("#country-div").attr("class", "form-group");
+  }
+});
+
+/*
+  Sends Ajax request to get public holidays and updates table with information
+*/
+async function sendRequest() {
     // initialize variables for url
     let initialURL = "https://date.nager.at/api/v3/publicholidays/"
     let userYear = $("#user-year").val();
     let userCountry = $("input[name=TypeList]").val();
-
-    validateInputs(userYear, userCountry);
 
     // create url for GET request
     let userURL = initialURL + userYear + "/" + userCountry;
@@ -30,9 +60,6 @@ async function sendRequest() {
 
         // show table
         $("#holiday-table").css("visibility", "visible");
-
-        // remove height attribute
-        $("#particles-js").css("height", "auto");
 
         // reset table data
         $("#holiday-output").html("<tbody><tr id='country-name'></tr><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
@@ -67,6 +94,7 @@ async function sendRequest() {
             // increment id
             i++;
         }
+        updateHeightAttr();
     }
     // display error message if country isn't valid
     else {
@@ -74,11 +102,24 @@ async function sendRequest() {
     }
 }
 
-function validateInputs(year, country) {
+/*
+  Properly formats background image
+*/
+function updateHeightAttr() {
+  const rowLength = 9;
 
+  // update height attribute
+  if (document.getElementById("holiday-output").rows.length > rowLength) {
+    $("#particles-js").css("height", "auto");
+  }
+  else {
+    $("#particles-js").css("height", "100%");
+  }
 }
 
-// if the user hits enter with either field full, search for the holidays
+/*
+  If the user hits enter with either field full, search for the holidays
+*/
 document.addEventListener("keypress", function(e) {
     if ($("#user-year").val() != "" || $("input[name=TypeList]").val() != "") {
         if (e.key === "Enter") {

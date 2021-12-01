@@ -18,14 +18,14 @@
       </div>
   
       <form id="user-form" class="form-inline">
-        <div class="form-group">
-          <label for="user-year" id="year-label" class="">Enter a Year: </label>
+        <div class="form-group" id="year-div">
+          <label for="user-year" id="year-label" class="control-label">Enter a Year: </label>
           <input type="text" id="user-year" class="form-control">
         </div>
       
-        <div class="form-group">
-          <label for="TypeList" id="country-label">Enter a Country Name: </label>
-          <input name="TypeList" list="countries" id="country" class="form-control">
+        <div class="form-group" id="country-div">
+          <label for="TypeList" id="country-label" class="control-label">Enter a Country Name: </label>
+          <input name="TypeList" list="countries" id="user-country" class="form-control">
           <datalist id="countries">
             <option value="AD">Andorra</option>
             <option value="AL">Albania</option>
@@ -166,7 +166,7 @@
       </div>
   
       <div id="holiday-table">
-        <table id="holiday-output" class="table table-striped table-bordered">
+        <table id="holiday-output" class="table table-bordered">
           <caption></caption>
           <tr id="country-name"></tr>
           <tr>
