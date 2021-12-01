@@ -12,9 +12,11 @@
   
   <body>
     <div id="particles-js">
+      <div id="lights"></div>
+
       <div id="headers">
         <h1 id="title">Welcome to the Holiday Search Engine!</h1>
-        <h3 id="intro">Enter a year and a date to see all of the holidays from over 100 countries!</h3>  
+        <h3 id="intro">Enter a year and a country code to see all of the holidays from over 100 countries!</h3>  
       </div>
   
       <form id="user-form" class="form-inline">
@@ -166,7 +168,7 @@
       </div>
   
       <div id="holiday-table">
-        <table id="holiday-output" class="table table-bordered">
+        <table id="holiday-output" class="table">
           <caption></caption>
           <tr id="country-name"></tr>
           <tr>

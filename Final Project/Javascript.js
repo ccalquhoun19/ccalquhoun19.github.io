@@ -1,5 +1,7 @@
 // TODO CSS for table layout
 // TODO make the page look pretty
+// TODO change font and color of headers
+// TODO use JS libary?
 
 
 /*
@@ -43,20 +45,20 @@ async function sendRequest() {
     let initialURL = "https://date.nager.at/api/v3/publicholidays/"
     let userYear = $("#user-year").val();
     let userCountry = $("input[name=TypeList]").val();
-
-    // create url for GET request
     let userURL = initialURL + userYear + "/" + userCountry;
 
     // fetch the url and check if it's valid
     const response = await fetch(userURL);
     if (response.ok) {
-        // initialize id incrementer
         let i = 1;
-
-        // initialize variables for adding elements to the table
         let dates = "";
         let localNames = "";
         let commonNames = "";
+        // followig code from: https://cmsdk.com/jquery/getting-the-value-and-text-from-a-datalist-in-jquery.html
+        let countryName = document.querySelectorAll('option[value="' + userCountry + '"]')[0].innerHTML;
+
+        // get response from API
+        const holidays = await response.json();
 
         // show table
         $("#holiday-table").css("visibility", "visible");
@@ -64,15 +66,8 @@ async function sendRequest() {
         // reset table data
         $("#holiday-output").html("<tbody><tr id='country-name'></tr><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
 
-        // gets the country name
-        // code line from: https://cmsdk.com/jquery/getting-the-value-and-text-from-a-datalist-in-jquery.html
-        let countryName = document.querySelectorAll('option[value="' + userCountry + '"]')[0].innerHTML;
-
         // add country name
         $("#country-name").html(`<th colspan='3'> ${"Holidays in " + countryName} </th>`);
-
-        // get response from API
-        const holidays = await response.json();
 
         // append headers for the table
         $("#dates-row").text("Holiday Date");
@@ -98,7 +93,7 @@ async function sendRequest() {
     }
     // display error message if country isn't valid
     else {
-       alert("Some of your input is invalid.");
+       alert("Hint: Country needs to be 2-letter code.");
     }
 }
 
@@ -121,16 +116,27 @@ function updateHeightAttr() {
   If the user hits enter with either field full, search for the holidays
 */
 document.addEventListener("keypress", function(e) {
-    if ($("#user-year").val() != "" || $("input[name=TypeList]").val() != "") {
+    if ($("#user-year").val() != "" && $("input[name=TypeList]").val() != "") {
         if (e.key === "Enter") {
             sendRequest();
         }
     }
 });
 
+alert(screen.width);
 
+/* 
+  following code retrieved from: https://www.developphp.com/video/CSS/Holiday-Christmas-Lights-Animation-Tutorial-CSS-JavaScript
+*/
+for(var i = 0; i < 22; i++){
+	var bulb = document.createElement("div");
+	bulb.className = "bulb";
+	document.getElementById("lights").appendChild(bulb);
+}
 
-// following code retrieved from: https://codepen.io/n-sayenko/pen/qOXKVr
+/*
+  following code retrieved from: https://codepen.io/n-sayenko/pen/qOXKVr
+*/
 particlesJS("particles-js", {
     "particles": {
       "number": {
