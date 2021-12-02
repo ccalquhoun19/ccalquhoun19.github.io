@@ -3,6 +3,23 @@
 // TODO change font and color of headers
 // TODO use JS libary?
 
+/*
+  Dynamically changes number of lights according to screen size
+*/
+document.addEventListener("DOMContentLoaded", function() {
+  const bulbSize = 60;
+  let screenWidth = screen.width;
+  let numBulbs = Math.floor(screenWidth / bulbSize);
+
+  /* 
+    following code retrieved from: https://www.developphp.com/video/CSS/Holiday-Christmas-Lights-Animation-Tutorial-CSS-JavaScript
+  */
+  for (var i = 0; i < numBulbs; i++){
+	  var bulb = document.createElement("div");
+	  bulb.className = "bulb";
+	  document.getElementById("lights").appendChild(bulb);
+  }
+})
 
 /*
   Check if the year is valid
@@ -15,9 +32,11 @@ $("#user-year").focusout(function() {
 
   if (year <= minYear || year >= maxYear) {
     $("#year-div").attr("class", "form-group has-error");
+    $("#year-help-block").css("visibility", "visible");
   }
   else if (year > minYear || year < maxYear) {
     $("#year-div").attr("class", "form-group");
+    $("#year-help-block").css("visibility", "hidden");
   }
 });
 
@@ -31,9 +50,11 @@ $("#user-country").focusout(function() {
 
   if (country.length != codeLength) {
     $("#country-div").attr("class", "form-group has-error");
+    $("#country-help-block").css("visibility", "visible");
   }
   else {
     $("#country-div").attr("class", "form-group");
+    $("#country-help-block").css("visibility", "hidden");
   }
 });
 
@@ -91,10 +112,6 @@ async function sendRequest() {
         }
         updateHeightAttr();
     }
-    // display error message if country isn't valid
-    else {
-       alert("Hint: Country needs to be 2-letter code.");
-    }
 }
 
 /*
@@ -123,16 +140,7 @@ document.addEventListener("keypress", function(e) {
     }
 });
 
-alert(screen.width);
 
-/* 
-  following code retrieved from: https://www.developphp.com/video/CSS/Holiday-Christmas-Lights-Animation-Tutorial-CSS-JavaScript
-*/
-for(var i = 0; i < 22; i++){
-	var bulb = document.createElement("div");
-	bulb.className = "bulb";
-	document.getElementById("lights").appendChild(bulb);
-}
 
 /*
   following code retrieved from: https://codepen.io/n-sayenko/pen/qOXKVr

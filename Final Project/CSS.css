@@ -33,6 +33,10 @@ label {
     padding-left: 10px;
 }
 
+#year-help-block, #country-help-block {
+    visibility: hidden;
+}
+
 #holiday-table {
     padding: 0px 30px 30px 30px;
     visibility: hidden;
