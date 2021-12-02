@@ -1,6 +1,11 @@
+/* following code from: https://stackoverflow.com/questions/64508137/how-to-use-ttf-as-font-family-in-html */
 @font-face {
     font-family: "MyWebFont";
     src: url("MountainsofChristmas.ttf")
+}
+
+body {
+    font-family: "MyWebFont";
 }
 
 #lights {
@@ -26,9 +31,19 @@ label {
     font-family: "MyWebFont";
 }
 
+h1 {
+    font-size: 4.5vw;
+}
+
 #intro {
+    font-size: 2.2vw;
     margin: 10px;
     padding: 10px;
+}
+
+label {
+    font-size: 1.5vw;
+    font-weight: normal;
 }
 
 #country-label {

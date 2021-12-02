@@ -1,13 +1,12 @@
 // TODO CSS for table layout
 // TODO make the page look pretty
-// TODO change font and color of headers
 // TODO use JS libary?
 
 /*
   Dynamically changes number of lights according to screen size
 */
 document.addEventListener("DOMContentLoaded", function() {
-  const bulbSize = 60;
+  const bulbSize = 62;
   let screenWidth = screen.width;
   let numBulbs = Math.floor(screenWidth / bulbSize);
 
