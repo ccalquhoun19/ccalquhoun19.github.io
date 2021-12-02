@@ -5,6 +5,10 @@
 }
 
 body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1, h3, label, button {
     font-family: "MyWebFont";
 }
 
@@ -63,6 +67,7 @@ table {
     background-color: transparent;
     text-align: center;
     margin: auto;
+    /* font-size: 1.2vw; */
     /* following line from: https://codepen.io/alexerlandsson/pen/mPWgpO */
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
