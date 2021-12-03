@@ -67,17 +67,17 @@ table {
     background-color: transparent;
     text-align: center;
     margin: auto;
-    /* font-size: 1.2vw; */
     /* following line from: https://codepen.io/alexerlandsson/pen/mPWgpO */
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 th {
     text-align: center;
+    font-family: "MyWebFont";
 }
 
 td {
-    font-size: larger;
+    font-size: 1.5vw;
 }
 
 .table > tbody > tr > th, .table > tbody > tr > td {
@@ -86,11 +86,11 @@ td {
 }
 
 #country-name {
-    font-size: xx-large;
+    font-size: 2.4vw;
 }
 
 #dates-row, #local-row, #common-row {
-    font-size: x-large;
+    font-size: 2vw;;
 }
 
 

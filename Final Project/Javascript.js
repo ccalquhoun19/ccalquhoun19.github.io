@@ -1,7 +1,3 @@
-// TODO CSS for table layout
-// TODO make the page look pretty
-// TODO use JS libary?
-
 /*
   Dynamically changes number of lights according to screen size
 */
@@ -13,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
   /* 
     following code retrieved from: https://www.developphp.com/video/CSS/Holiday-Christmas-Lights-Animation-Tutorial-CSS-JavaScript
   */
-  for (var i = 0; i < numBulbs; i++){
+  for (var i = 0; i < numBulbs; i++) {
 	  var bulb = document.createElement("div");
 	  bulb.className = "bulb";
 	  document.getElementById("lights").appendChild(bulb);
   }
-})
+});
 
 /*
   Check if the year is valid
@@ -61,56 +57,56 @@ $("#user-country").focusout(function() {
   Sends Ajax request to get public holidays and updates table with information
 */
 async function sendRequest() {
-    // initialize variables for url
-    let initialURL = "https://date.nager.at/api/v3/publicholidays/"
-    let userYear = $("#user-year").val();
-    let userCountry = $("input[name=TypeList]").val();
-    let userURL = initialURL + userYear + "/" + userCountry;
+  // initialize variables for url
+  let initialURL = "https://date.nager.at/api/v3/publicholidays/"
+  let userYear = $("#user-year").val();
+  let userCountry = $("input[name=TypeList]").val();
+  let userURL = initialURL + userYear + "/" + userCountry;
 
-    // fetch the url and check if it's valid
-    const response = await fetch(userURL);
-    if (response.ok) {
-        let i = 1;
-        let dates = "";
-        let localNames = "";
-        let commonNames = "";
-        // followig code from: https://cmsdk.com/jquery/getting-the-value-and-text-from-a-datalist-in-jquery.html
-        let countryName = document.querySelectorAll('option[value="' + userCountry + '"]')[0].innerHTML;
+  // fetch the url and check if it's valid
+  const response = await fetch(userURL);
+  if (response.ok) {
+    let i = 1;
+    let dates = "";
+    let localNames = "";
+    let commonNames = "";
+    // followig code from: https://cmsdk.com/jquery/getting-the-value-and-text-from-a-datalist-in-jquery.html
+    let countryName = document.querySelectorAll('option[value="' + userCountry + '"]')[0].innerHTML;
 
-        // get response from API
-        const holidays = await response.json();
+    // get response from API
+    const holidays = await response.json();
 
-        // show table
-        $("#holiday-table").css("visibility", "visible");
+    // show table
+    $("#holiday-table").css("visibility", "visible");
 
-        // reset table data
-        $("#holiday-output").html("<tbody><tr id='country-name'></tr><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
+    // reset table data
+    $("#holiday-output").html("<tbody><tr id='country-name'></tr><tr><th id='dates-row'></th><th id='common-row'></th><th id='local-row'></th></tr></tbody>");
 
-        // add country name
-        $("#country-name").html(`<th colspan='3'> ${"Holidays in " + countryName} </th>`);
+    // add country name
+    $("#country-name").html(`<th colspan='3'> ${"Holidays in " + countryName} </th>`);
 
-        // append headers for the table
-        $("#dates-row").text("Holiday Date");
-        $("#common-row").text("Common Holiday Name");
-        $("#local-row").text("Local Holiday Name");
+    // append headers for the table
+    $("#dates-row").text("Holiday Date");
+    $("#common-row").text("Common Holiday Name");
+    $("#local-row").text("Local Holiday Name");
 
-        // for each date in the response
-        for (let names of holidays) {
-            // create each row with the date, common name, and local name
-            dates = `<tr id=${i}><td> ${names.date} </td></tr>`;
-            commonNames = `<td> ${names.name} </td>`;
-            localNames = `<td> ${names.localName} </td>`;
+    // for each date in the response
+    for (let names of holidays) {
+      // create each row with the date, common name, and local name
+      dates = `<tr id=${i}><td> ${names.date} </td></tr>`;
+      commonNames = `<td> ${names.name} </td>`;
+      localNames = `<td> ${names.localName} </td>`;
 
-            // populate the table
-            $("#holiday-output").append(dates);
-            $("#" + i).append(commonNames);
-            $("#" + i).append(localNames);
+      // populate the table
+      $("#holiday-output").append(dates);
+      $("#" + i).append(commonNames);
+      $("#" + i).append(localNames);
 
-            // increment id
-            i++;
-        }
-        updateHeightAttr();
+      // increment id
+      i++;
     }
+    updateHeightAttr();
+  }
 }
 
 /*
@@ -129,7 +125,7 @@ function updateHeightAttr() {
 }
 
 /*
-  If the user hits enter with either field full, search for the holidays
+  If the user hits enter with both fields full, search for the holidays
 */
 document.addEventListener("keypress", function(e) {
     if ($("#user-year").val() != "" && $("input[name=TypeList]").val() != "") {
